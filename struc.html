@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>STRUCTURED QUERY LANGUAGE</h1>
+    <img src="/data base/sql.jpg" alt="">
+    <p>This article is about the database language. For other uses, see SQL (disambiguation).
+"SEQUEL" redirects here. For the topic of the word, see sequel. For other uses, see Sequel (disambiguation).
+SQL (Structured Query Language)
+Paradigm	Declarative
+Family	Query language
+Designed by	Donald D. Chamberlin
+Raymond F. Boyce
+Developer	ISO/IEC JTC 1 (Joint Technical Committee 1) / SC 32 (Subcommittee 32) / WG 3 (Working Group 3)
+First appeared	1973; 52 years ago
+Stable release	
+SQL:2023 / June 2023; 2 years ago
+Typing discipline	Static, strong
+OS	Cross-platform
+Website	www.iso.org/standard/76583.html
+Major implementations
+Many
+Dialects
+SQL-86SQL-89SQL-92SQL:1999SQL:2003SQL:2006SQL:2008SQL:2011SQL:2016SQL:2023
+Influenced by
+Datalog
+Influenced
+CQL, LINQ, SPARQL, SOQL, PowerShell,[1] JPQL, jOOQ, N1QL, GQL
+ Structured Query Language at Wikibooks
+SQL (file format)
+Filename extension	
+.sql
+Internet media type	
+application/sql[2][3]
+Developed by	ISO/IEC
+Initial release	1986; 39 years ago
+Type of format	Database
+Standard	ISO/IEC 9075
+Open format?	Yes
+Website	www.iso.org/standard/76583.html
+Structured Query Language (SQL) (pronounced /ˌɛsˌkjuˈɛl/ S-Q-L; or alternatively as /ˈsiːkwəl/ ⓘ "sequel") [4][5] is a domain-specific language used to manage data, especially in a relational database management system (RDBMS). It is particularly useful in handling structured data, i.e., data incorporating relations among entities and variables.
+
+Introduced in the 1970s, SQL offered two main advantages over older read–write APIs such as ISAM or VSAM. Firstly, it introduced the concept of accessing many records with one single command. Secondly, it eliminates the need to specify how to reach a record, i.e., with or without an index.
+
+Originally based upon relational algebra and tuple relational calculus, SQL consists of many types of statements,[6] which may be informally classed as sublanguages, commonly: Data query Language (DQL), Data Definition Language (DDL), Data Control Language (DCL), and Data Manipulation Language (DML).[7]
+
+The scope of SQL includes data query, data manipulation (insert, update, and delete), data definition (schema creation and modification), and data access control. Although SQL is essentially a declarative language (4GL), it also includes procedural elements.
+
+SQL was one of the first commercial languages to use Edgar F. Codd's relational model. The model was described in his influential 1970 paper, "A Relational Model of Data for Large Shared Data Banks".[8] Despite not entirely adhering to the relational model as described by Codd, SQL became the most widely used database language.[9][10]
+
+SQL became a standard of the American National Standards Institute (ANSI) in 1986 and of the International Organization for Standardization (ISO) in 1987.[11] Since then, the standard has been revised multiple times to include a larger set of features and incorporate common extensions. Despite the existence of standards, virtually no implementations in existence adhere to it fully, and most SQL code requires at least some changes before being ported to different database systems.
+
+History
+SQL was initially developed at IBM by Donald D. Chamberlin and Raymond F. Boyce after learning about the relational model from Edgar F. Codd[12] in the early 1970s.[13] This version, initially called SEQUEL (Structured English Query Language), was designed to manipulate and retrieve data stored in IBM's original quasirelational database management system, System R, which a group at IBM San Jose Research Laboratory had developed during the 1970s.[13]
+
+Chamberlin and Boyce's first attempt at a relational database language was SQUARE (Specifying Queries in A Relational Environment), but it was difficult to use due to subscript/superscript notation. After moving to the San Jose Research Laboratory in 1973, they began work on a sequel to SQUARE.[12] The original name SEQUEL, which is widely regarded as a pun on QUEL, the query language of Ingres,[14] was later changed to SQL (dropping the vowels) because "SEQUEL" was a trademark of the UK-based Hawker Siddeley Dynamics Engineering Limited company.[15] The label SQL later became the acronym for Structured Query Language.[16]
+
+After testing SQL at customer test sites to determine the usefulness and practicality of the system, IBM began developing commercial products based on their System R prototype, including System/38, SQL/DS, and IBM Db2, which were commercially available in 1979, 1981, and 1983, respectively.[17] IBM's endorsement caused the industry to move to SQL from alternatives like QUEL.[18]
+
+In the late 1970s, Relational Software, Inc. (now Oracle Corporation) saw the potential of the concepts described by Codd, Chamberlin, and Boyce, and developed their own SQL-based RDBMS with aspirations of selling it to the U.S. Navy, Central Intelligence Agency, and other U.S. government agencies. In June 1979, Relational Software introduced one of the first commercially available implementations of SQL, Oracle V2 (Version2) for VAX computers.
+
+By 1986, ANSI and ISO standard groups officially adopted the standard "Database Language SQL" language definition. New versions of the standard were published in 1989, 1992, 1996, 1999, 2003, 2006, 2008, 2011,[12] 2016 and most recently, 2023.[19]
+
+Interoperability and standardization
+SQL language revisions
+SQL-86SQL-89SQL-92SQL:1999SQL:2003SQL:2006SQL:2008SQL:2011SQL:2016SQL:2019SQL:2023
+vte
+Overview
+SQL implementations are incompatible between vendors and do not necessarily completely follow standards. In particular, date and time syntax, string concatenation, NULLs, and comparison case sensitivity vary from vendor to vendor. PostgreSQL[20] and Mimer SQL[21] strive for standards compliance, though PostgreSQL does not adhere to the standard in all cases. For example, the folding of unquoted names to lower case in PostgreSQL is incompatible with the SQL standard,[22] which says that unquoted names should be folded to upper case.[23] Thus, according to the standard, Foo should be equivalent to FOO, not foo.
+
+Popular implementations of SQL commonly omit support for basic features of Standard SQL, such as the DATE or TIME data types. The most obvious such examples, and incidentally the most popular commercial and proprietary SQL DBMSs, are Oracle (whose DATE behaves as DATETIME,[24][25] and lacks a TIME type)[26] and MS SQL Server (before the 2008 version). As a result, SQL code can rarely be ported between database systems without modifications.
+
+Reasons for incompatibility
+Several reasons for the lack of portability between database systems include:
+
+The complexity and size of the SQL standard means that most implementers do not support the entire standard.
+The SQL standard does not specify the database behavior in some important areas (e.g., indices, file storage), leaving implementations to decide how to behave.
+The SQL standard defers some decisions to individual implementations, such as how to name a results column that was not named explicitly.[27]: 207 
+The SQL standard precisely specifies the syntax that a conforming database system must implement. However, the standard's specification of the semantics of language constructs is less well-defined, leading to ambiguity.
+Many database vendors have large existing customer bases; where the newer version of the SQL standard conflicts with the prior behavior of the vendor's database, the vendor may be unwilling to break</p>
+</body>
+</html>
